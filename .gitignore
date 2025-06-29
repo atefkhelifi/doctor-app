@@ -28,6 +28,3 @@ application.yml
 
 # Others
 node_modules/
-
-# Spring Boot config
-src/main/resources/application.properties
