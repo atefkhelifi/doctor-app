@@ -29,4 +29,6 @@ public class User {
 
 	  @Column(nullable = false)
 	  private String roles; // e.g. "ROLE_USER,ROLE_ADMIN"
+	  
+	
 }
