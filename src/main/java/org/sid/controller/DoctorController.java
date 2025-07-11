@@ -3,6 +3,8 @@ package org.sid.controller;
 import java.util.List;
 
 import org.sid.dto.DoctorRequest;
+import org.sid.dto.SymptomRequest;
+import org.sid.service.DoctorDetectionService;
 import org.sid.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,12 @@ public class DoctorController {
 
 	@Autowired
     private DoctorService doctorService;
+
+	 private final DoctorDetectionService detectionService;
+
+	    public DoctorController(DoctorDetectionService detectionService) {
+	        this.detectionService = detectionService;
+	    }
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -53,6 +61,11 @@ public class DoctorController {
     public ResponseEntity<String> deleteDoctor(@PathVariable Long id) {
         doctorService.deleteDoctor(id);
         return ResponseEntity.ok("Doctor deleted");
+    }
+   
+    @PostMapping("/suggest-specialist")
+    public String suggestSpecialist(@RequestBody SymptomRequest request) {
+        return detectionService.detectSpecialist(request.getSymptom());
     }
 
 }
