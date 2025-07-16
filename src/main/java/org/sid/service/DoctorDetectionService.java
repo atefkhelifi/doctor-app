@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class DoctorDetectionService {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String FLASK_API_URL = "http://localhost:5000/detect";
+    private final String FLASK_API_URL = "https://medical-specialist-detector-api.onrender.com/detect";
 
     public String detectSpecialist(String symptom) {
         SymptomRequest request = new SymptomRequest(symptom);
