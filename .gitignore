@@ -19,7 +19,7 @@ Thumbs.db
 
 # Config files
 .env
-application.properties
+#application.properties
 application.yml
 
 # Dependency caches
