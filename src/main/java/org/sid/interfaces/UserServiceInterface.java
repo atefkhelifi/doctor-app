@@ -7,7 +7,7 @@ import org.sid.entity.User;
 import org.sid.security.CustomUserDetails;
 
 public interface UserServiceInterface {
-	public User registerUser(String username, String rawPassword);
+	public User registerUser(String username, String rawPassword,String roles);
 	String getProfile(CustomUserDetails userDetails);
 	List<UserRequest> getAllUsers();
 	UserRequest getUserById(Long id);

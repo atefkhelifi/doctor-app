@@ -20,11 +20,11 @@ public class UserService implements UserServiceInterface{
 	    private PasswordEncoder passwordEncoder;
 
 	    @Override
-	    public User registerUser(String username, String rawPassword) {
+	    public User registerUser(String username, String rawPassword, String roles) {
 	        User user = new User();
 	        user.setUsername(username);
 	        user.setPassword(passwordEncoder.encode(rawPassword));  // hash password
-	        user.setRoles("ROLE_USER");  // default role
+	        user.setRoles(roles);  // default role
 
 	        return userRepository.save(user);
 	    }
