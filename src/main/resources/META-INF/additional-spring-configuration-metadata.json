@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "geoapify.api.key",
+    "type": "java.lang.String",
+    "description": "A description for 'geoapify.api.key'"
+  },
+  {
+    "name": "geoapify.base.url",
+    "type": "java.lang.String",
+    "description": "A description for 'geoapify.base.url'"
+  }
+]}
